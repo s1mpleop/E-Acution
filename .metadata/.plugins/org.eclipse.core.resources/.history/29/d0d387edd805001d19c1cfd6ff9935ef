@@ -1,0 +1,27 @@
+package com.subham.casestudy.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.subham.casestudy.entity.Product;
+import com.subham.casestudy.repository.ProductRepository;
+import com.subham.casestudy.service.ProductService;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+    private ProductRepository productRepository;
+	@Override
+	public Product addProd(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delProd(Long productId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

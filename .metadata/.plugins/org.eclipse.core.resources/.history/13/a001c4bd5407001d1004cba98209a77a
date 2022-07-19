@@ -1,0 +1,40 @@
+package com.subham.auction.entity;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+import lombok.*;
+
+@Entity
+@Table(name="product")
+@NoArgsConstructor
+@Getter
+@Setter
+public class Product {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	
+	private String name;
+	
+	private String discreption;
+	
+	private Double staringBidAmount;
+	
+	private LocalDate lastDateOfBiding;
+	
+	private String category;
+	
+	@ManyToOne
+	private Seller seller;
+	
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	private List<Bids> bids = new ArrayList<>();
+	
+	
+}

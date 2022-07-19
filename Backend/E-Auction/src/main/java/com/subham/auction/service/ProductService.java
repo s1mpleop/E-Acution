@@ -1,0 +1,22 @@
+package com.subham.auction.service;
+
+import java.util.List;
+
+import com.subham.auction.payloads.ProductDto;
+
+
+public interface ProductService {
+
+	//creating a product
+	ProductDto createProduct(ProductDto productDto, Long sellerId);
+	
+	//deleting a product
+	void deleteProduct(Long productId);
+	
+	List<ProductDto> getAllProducts();
+	
+	ProductDto getProductById(Long productId);
+	
+	
+	
+}

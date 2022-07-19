@@ -1,0 +1,56 @@
+package com.subham.auction.service.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.subham.auction.entity.Seller;
+import com.subham.auction.exception.ResourceNotFoundException;
+import com.subham.auction.payloads.SellerDto;
+import com.subham.auction.repository.SellerRepo;
+import com.subham.auction.service.SellerService;
+
+@Service
+public class SellerServiceImpl implements SellerService {
+
+	@Autowired
+	private SellerRepo sellerRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	
+	@Override
+	public SellerDto createSeller(SellerDto sellerDto) {
+		Seller seller = this.modelMapper.map(sellerDto, Seller.class);
+		Seller savedSeller = this.sellerRepo.save(seller);
+		return this.modelMapper.map(savedSeller, SellerDto.class);
+	}
+
+
+	@Override
+	public List<SellerDto> getAllSeller() {
+		List<Seller> sellers = this.sellerRepo.findAll();
+		List<SellerDto> bidDtos = sellers.stream().map((seller) ->  this.modelMapper.map(seller, SellerDto.class)).collect(Collectors.toList());
+		return bidDtos;
+	}
+
+	@Override
+	public SellerDto getSellerById(Long sellerId) {
+		Seller user=this.sellerRepo.findById(sellerId)
+				.orElseThrow(()-> new ResourceNotFoundException("seller","seller id",sellerId));
+		return this.modelMapper.map(user, SellerDto.class);
+	}
+
+
+	@Override
+	public void deleteUser(Long sellerID) {
+		Seller bid = this.sellerRepo.findById(sellerID).orElseThrow(() -> new ResourceNotFoundException("seller", "seller id", sellerID));
+		this.sellerRepo.delete(bid);		
+	}
+
+}

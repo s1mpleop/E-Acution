@@ -1,0 +1,9 @@
+package com.subham.auction.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.subham.auction.entity.Bids;
+
+public interface BidsRepo extends JpaRepository<Bids, Long> {
+
+}

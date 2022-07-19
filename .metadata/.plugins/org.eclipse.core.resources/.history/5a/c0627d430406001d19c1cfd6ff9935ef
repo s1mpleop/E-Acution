@@ -1,0 +1,14 @@
+package com.subham.auction.service;
+
+import com.subham.auction.entity.Product;
+import com.subham.auction.payloads.ProductDto;
+
+public interface ProductService {
+
+	//creating a product
+	Product createProduct(ProductDto productDto);
+	
+	//deleting a product
+	void deleteProduct(Long productId);
+	
+}

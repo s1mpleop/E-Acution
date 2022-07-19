@@ -1,0 +1,5 @@
+package com.subham.auction.controllers;
+
+public class ProductController {
+
+}

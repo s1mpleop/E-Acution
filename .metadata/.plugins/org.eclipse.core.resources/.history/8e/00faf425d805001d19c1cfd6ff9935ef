@@ -1,0 +1,5 @@
+package com.subham.casestudy.service;
+
+public interface ProductService {
+
+}

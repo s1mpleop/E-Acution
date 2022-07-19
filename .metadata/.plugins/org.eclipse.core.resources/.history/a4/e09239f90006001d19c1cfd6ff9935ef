@@ -1,0 +1,5 @@
+package com.subham.auction.entity;
+
+public class Product {
+
+}

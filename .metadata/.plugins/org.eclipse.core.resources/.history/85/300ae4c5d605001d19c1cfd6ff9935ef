@@ -1,0 +1,27 @@
+package com.subham.casestudy.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Product {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long productId;
+
+    private Long sellerId;
+
+    private String name;
+
+    private String description;
+
+    private Double startingBidAmount;
+
+    private LocalDate lastDateOfBidding;
+
+    private String category;
+	
+}

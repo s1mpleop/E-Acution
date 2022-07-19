@@ -1,0 +1,20 @@
+package com.subham.casestudy.service.impl;
+
+import com.subham.casestudy.entity.Product;
+import com.subham.casestudy.service.ProductService;
+
+public class ProductServiceImpl implements ProductService {
+
+	@Override
+	public Product addProd(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delProd(Long productId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

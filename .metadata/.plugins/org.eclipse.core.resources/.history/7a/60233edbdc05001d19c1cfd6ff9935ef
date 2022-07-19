@@ -1,0 +1,23 @@
+package com.subham.casestudy.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.subham.casestudy.entity.Bids;
+
+public interface BidsRepository extends JpaRepository<Bids, Long> {
+	
+	@Query("FROM Bids WHERE productId = ?1")
+    List<Bids> findAllByProductId(Long productId);
+
+    @Query("SELECT d FROM Buyer b INNER JOIN Bids d ON b.id=d.buyerId WHERE b.emailId = ?1 AND d.productId = ?2")
+	List<Bids> countByProductAndEmail(Long product, String email);
+    
+    @Modifying
+    @Query("UPDATE Bids b SET u.bidAmount = :bidAmount where u.productId = :productId")
+    void updatedBid(@Param(value = "productId") long productId, @Param(value = "bidAmount") Double bidAmount);
+}

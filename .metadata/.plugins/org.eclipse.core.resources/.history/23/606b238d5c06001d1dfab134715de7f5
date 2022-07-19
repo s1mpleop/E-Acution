@@ -1,0 +1,5 @@
+package com.subham.auction.payloads;
+
+public class BuyerDto {
+
+}

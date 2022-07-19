@@ -1,0 +1,15 @@
+package com.subham.auction.payloads;
+
+import java.time.LocalDate;
+
+public class BidsDto {
+
+	private Long bidAmount;
+	
+	private LocalDate biddingDate;
+	
+	private ProductDto product;
+	
+	private BuyerDto buyer;
+	
+}

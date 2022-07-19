@@ -1,0 +1,10 @@
+package com.subham.auction.service;
+
+import com.subham.auction.payloads.BuyerDto;
+
+public interface BuyerService {
+
+	//creating a buyer
+	BuyerDto createBuyer(BuyerDto buyerDto);
+	
+}

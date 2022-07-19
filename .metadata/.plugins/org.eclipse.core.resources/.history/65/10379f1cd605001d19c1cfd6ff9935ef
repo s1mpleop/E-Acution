@@ -1,0 +1,14 @@
+package com.subham.casestudy.service.impl;
+
+import com.subham.casestudy.entity.Seller;
+import com.subham.casestudy.service.SellerService;
+
+public class SellerServiceImpl implements SellerService {
+
+	@Override
+	public Seller addSel(Seller seller) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

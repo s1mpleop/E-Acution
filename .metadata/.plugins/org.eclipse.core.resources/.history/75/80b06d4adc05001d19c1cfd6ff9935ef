@@ -1,0 +1,39 @@
+package com.subham.casestudy.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.subham.casestudy.entity.Bids;
+import com.subham.casestudy.entity.Buyer;
+import com.subham.casestudy.service.BidsService;
+import com.subham.casestudy.service.BuyerService;
+
+@RestController
+public class BuyerController {
+
+    @Autowired
+    private BuyerService buyerService;
+
+    @Autowired
+    private BidsService bidsService;
+
+    @PostMapping("/addBuyer")
+    public Buyer addBuy(@RequestBody Buyer buyer){
+        return buyerService.addBuy(buyer);
+    }
+
+    @PostMapping("buyer/place-bid")
+    public Bids placeBid(@RequestBody Bids bids){
+        return bidsService.placeBid(bids);
+    }
+    
+    @PostMapping(path= "/buyer/update-bid/{productId}/{emailId}/{newBidAmount}")
+    public void updateBid(@PathVariable Long productId, @PathVariable String emailId, @PathVariable Double newBidAmount)
+    {
+    	 bidsService.updateBid(productId, emailId, newBidAmount);
+    }
+}

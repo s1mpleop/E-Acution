@@ -1,0 +1,28 @@
+package com.subham.casestudy.service.impl;
+
+import java.util.List;
+
+import com.subham.casestudy.entity.Bids;
+import com.subham.casestudy.service.BidsService;
+
+public class BidsServiceImpl implements BidsService {
+
+	@Override
+	public Bids placeBid(Bids bids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bids> showBids(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateBid(Long productId, String emailId, Double newBidAmount) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

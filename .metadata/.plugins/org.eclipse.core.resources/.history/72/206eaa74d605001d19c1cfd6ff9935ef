@@ -1,0 +1,5 @@
+package com.subham.casestudy.entity;
+
+public class Product {
+
+}

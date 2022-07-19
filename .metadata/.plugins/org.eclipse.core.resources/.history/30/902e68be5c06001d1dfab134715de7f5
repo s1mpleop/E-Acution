@@ -1,0 +1,5 @@
+package com.subham.auction.service;
+
+public interface BuyerService {
+
+}

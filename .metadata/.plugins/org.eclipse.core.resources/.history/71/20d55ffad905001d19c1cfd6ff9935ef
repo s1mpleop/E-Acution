@@ -1,0 +1,14 @@
+package com.subham.casestudy.service.impl;
+
+import com.subham.casestudy.entity.Buyer;
+import com.subham.casestudy.service.BuyerService;
+
+public class BuyerServiceImpl implements BuyerService {
+
+	@Override
+	public Buyer addBuyer(Buyer buyer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

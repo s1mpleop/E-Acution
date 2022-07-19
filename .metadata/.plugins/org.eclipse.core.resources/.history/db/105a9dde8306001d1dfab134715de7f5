@@ -1,0 +1,81 @@
+package com.subham.auction.service.impl;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.subham.auction.entity.Bids;
+import com.subham.auction.entity.Buyer;
+import com.subham.auction.entity.Product;
+import com.subham.auction.exception.ResourceNotFoundException;
+import com.subham.auction.payloads.BidsDto;
+import com.subham.auction.repository.BidsRepo;
+import com.subham.auction.repository.BuyerRepo;
+import com.subham.auction.repository.ProductRepo;
+import com.subham.auction.service.BidsService;
+
+@Service
+public class BidsServiceImpl implements BidsService {
+
+	@Autowired
+	private BidsRepo bidsRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	@Autowired
+	private BuyerRepo buyerRepo;
+	
+	@Autowired
+	private ProductRepo productRepo;
+	
+	@Override
+	public BidsDto createBids(BidsDto bidsDto, Long buyerId, Long productId) {
+		
+
+		Buyer buyer = this.buyerRepo.findById(buyerId).orElseThrow(() -> new ResourceNotFoundException("Buyer","Buyer id", buyerId));
+		
+		Product product = this.productRepo.findById(productId).orElseThrow(() -> new ResourceNotFoundException("Product", "Product id", productId));
+		
+		Bids bids = this.modelMapper.map(bidsDto, Bids.class);
+		
+		bids.setBuyer(buyer);
+		bids.setProduct(product);
+		
+		Bids newBid = this.bidsRepo.save(bids);
+		return this.modelMapper.map(newBid, BidsDto.class);
+	}
+
+	@Override
+	public BidsDto updateBids(BidsDto bidsDto, Long bidId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteBid(Long bidId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<BidsDto> getAllBids() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BidsDto> getBidsByBuyer(Long buyerId) {
+		Buyer buyer = this.buyerRepo.findById(buyerId).orElseThrow(() -> new ResourceNotFoundException("Buyer","Buyer id", buyerId));
+		return null;
+	}
+
+	@Override
+	public List<BidsDto> getBidsByProduct(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

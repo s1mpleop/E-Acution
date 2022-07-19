@@ -1,0 +1,9 @@
+package com.subham.auction.service;
+
+import com.subham.auction.payloads.SellerDto;
+
+public interface SellerService {
+
+	SellerDto createSeller(SellerDto seller);
+	
+}

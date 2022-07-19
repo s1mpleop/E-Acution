@@ -1,0 +1,17 @@
+package com.subham.auction.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.subham.auction.entity.Bids;
+import com.subham.auction.entity.Buyer;
+import com.subham.auction.entity.Product;
+
+public interface BidsRepo extends JpaRepository<Bids, Long> {
+
+	List<Bids> findByProduct(Product product);
+
+	List<Bids> findByBuyer(Buyer buyer);
+	
+}

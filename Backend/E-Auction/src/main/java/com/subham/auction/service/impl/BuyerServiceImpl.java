@@ -1,0 +1,69 @@
+package com.subham.auction.service.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.subham.auction.entity.Buyer;
+import com.subham.auction.exception.ResourceNotFoundException;
+import com.subham.auction.payloads.BuyerDto;
+import com.subham.auction.repository.BuyerRepo;
+import com.subham.auction.service.BuyerService;
+
+@Service
+public class BuyerServiceImpl implements BuyerService {
+
+	@Autowired
+	private BuyerRepo buyerRepo;
+	
+	@Autowired
+	private ModelMapper modelMapper;
+	
+	@Override
+	public BuyerDto createBuyer(BuyerDto buyerDto) {
+		Buyer buyer = this.modelMapper.map(buyerDto, Buyer.class);
+		Buyer createBuyer = this.buyerRepo.save(buyer);
+		return this.modelMapper.map(createBuyer, BuyerDto.class);
+	}
+
+	@Override
+	public List<BuyerDto> getAllBuyer() {
+		List<Buyer> sellers = this.buyerRepo.findAll();
+		List<BuyerDto> bidDtos = sellers.stream().map((seller) ->  this.modelMapper.map(seller, BuyerDto.class)).collect(Collectors.toList());
+		return bidDtos;
+	}
+
+	@Override
+	public BuyerDto getBuyerById(Long buyerId) {
+		Buyer user=this.buyerRepo.findById(buyerId)
+				.orElseThrow(()-> new ResourceNotFoundException("seller","seller id",buyerId));
+		return this.modelMapper.map(user, BuyerDto.class);
+	}
+
+	@Override
+	public void deleteBuyer(Long buyerID) {
+		Buyer bid = this.buyerRepo.findById(buyerID).orElseThrow(() -> new ResourceNotFoundException("seller", "seller id", buyerID));
+		this.buyerRepo.delete(bid);		
+		
+	}
+
+	@Override
+	public BuyerDto updateBuyer(BuyerDto buyer, Long buyerId) {
+
+		Buyer user=this.buyerRepo.findById(buyerId)
+				.orElseThrow(()-> new ResourceNotFoundException("seller","seller id",buyerId));
+		
+		user.setName(buyer.getName());
+		user.setEmail(buyer.getName());
+		user.setAddress(buyer.getAddress());
+		user.setPhoneNumber(buyer.getPhoneNumber());
+		
+		Buyer updatedSeller = this.buyerRepo.save(user);
+		return this.modelMapper.map(updatedSeller, BuyerDto.class);
+		
+	}
+
+}

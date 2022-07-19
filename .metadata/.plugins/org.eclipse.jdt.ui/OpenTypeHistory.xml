@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=CaseStudyApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.casestudy.service{SellerService.java[SellerService" modifiers="513" timestamp="1658065104000"/>
+    <typeInfo handle="=CaseStudyApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.casestudy.service{ProductService.java[ProductService" modifiers="513" timestamp="1658066142000"/>
+    <typeInfo handle="=CaseStudyApplication/\/Users\/subham\/.m2\/repository\/org\/yaml\/snakeyaml\/1.30\/snakeyaml-1.30.jar=/maven.pomderived=/true=/=/maven.groupId=/org.yaml=/=/maven.artifactId=/snakeyaml=/=/maven.version=/1.30=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.yaml.snakeyaml.parser(Production.class[Production" modifiers="1536" timestamp="1654845306000"/>
+    <typeInfo handle="=CaseStudyApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.casestudy.service{BuyerService.java[BuyerService" modifiers="513" timestamp="1658066955000"/>
+    <typeInfo handle="=CaseStudyApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.casestudy.service{BidsService.java[BidsService" modifiers="513" timestamp="1658067710000"/>
+    <typeInfo handle="=E-Auction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.auction.service{SellerService.java[SellerService" modifiers="513" timestamp="1658157261000"/>
+    <typeInfo handle="=E-Auction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.auction.service{ProductService.java[ProductService" modifiers="513" timestamp="1658086162000"/>
+    <typeInfo handle="=E-Auction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.auction.repository{ProductRepo.java[ProductRepo" modifiers="513" timestamp="1658084014000"/>
+    <typeInfo handle="=E-Auction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.auction.service{BuyerService.java[BuyerService" modifiers="513" timestamp="1658123091000"/>
+    <typeInfo handle="=E-Auction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.subham.auction.service{BidsService.java[BidsService" modifiers="513" timestamp="1658139544000"/>
+</typeInfoHistroy>

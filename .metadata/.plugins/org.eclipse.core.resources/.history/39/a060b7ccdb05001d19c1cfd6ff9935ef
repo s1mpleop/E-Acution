@@ -1,0 +1,12 @@
+package com.subham.casestudy.service;
+
+import java.util.List;
+
+import com.subham.casestudy.entity.Bids;
+
+public interface BidsService {
+
+	Bids placeBid(Bids bids);
+	List<Bids> showBids(Long productId);
+	Bids updateBid(Long productId, String emailId, Double newBidAmount);
+}

@@ -1,0 +1,14 @@
+package com.subham.auction.service.impl;
+
+import com.subham.auction.payloads.SellerDto;
+import com.subham.auction.service.SellerService;
+
+public class SellerServiceImpl implements SellerService {
+
+	@Override
+	public SellerDto createSeller(SellerDto seller) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

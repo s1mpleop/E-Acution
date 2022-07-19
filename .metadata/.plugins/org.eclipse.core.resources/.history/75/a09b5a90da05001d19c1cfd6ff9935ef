@@ -1,0 +1,9 @@
+package com.subham.casestudy.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.subham.casestudy.entity.Bids;
+
+public interface BidsRepository extends JpaRepository<Bids, Long> {
+	
+}

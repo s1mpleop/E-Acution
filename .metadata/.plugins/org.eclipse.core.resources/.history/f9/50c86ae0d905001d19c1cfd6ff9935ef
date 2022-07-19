@@ -1,0 +1,9 @@
+package com.subham.casestudy.service;
+
+import com.subham.casestudy.entity.Buyer;
+
+public interface BuyerService {
+
+	Buyer addBuyer(Buyer buyer);
+	
+}
